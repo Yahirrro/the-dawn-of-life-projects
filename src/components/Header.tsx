@@ -1,6 +1,12 @@
+"use client";
+
 import { sva } from "styled-system/css";
 import { PaltSettingsContainer } from "./PaltSettingContainer";
 import { useTranslations } from "next-intl";
+import { HeaderHands } from "./HeaderHands";
+import { useRef } from "react";
+import { HeaderAnimationIntro } from "./HeaderAnimations";
+import { motion } from "framer-motion";
 
 const headerStyles = sva({
   slots: [
@@ -26,7 +32,7 @@ const headerStyles = sva({
       padding: "28px",
       display: "grid",
       gridTemplateColumns: "repeat(5, 1fr)",
-      mdDown: {
+      lgDown: {
         padding: "8px",
       },
     },
@@ -38,7 +44,7 @@ const headerStyles = sva({
       justifyContent: "space-between",
       flexDirection: "column",
       height: "100%",
-      "& > svg": {
+      "& > span > svg": {
         width: "100%",
         height: "auto",
       },
@@ -51,7 +57,7 @@ const headerStyles = sva({
       fontSize: "33.5px",
       color: "white",
       lineHeight: "1.1",
-      mdDown: {
+      lgDown: {
         left: "8px",
       },
     },
@@ -63,7 +69,7 @@ const headerStyles = sva({
       color: "white",
       textAlign: "right",
       lineHeight: "1.1",
-      mdDown: {
+      lgDown: {
         top: "24%",
         left: "8px",
         textAlign: "left",
@@ -75,40 +81,10 @@ const headerStyles = sva({
       position: "absolute",
       bottom: "28px",
       right: "28px",
-      mdDown: {
+      lgDown: {
         bottom: "25%",
         left: "8px",
-        "& > svg": { width: "calc(60% - 56px)" },
-      },
-    },
-
-    hand1: {
-      position: "fixed",
-      top: "-30%",
-      left: "-15%",
-      transform: "scaleX(-1)",
-      rotate: "45deg",
-      width: "95vw",
-      maxWidth: "1670px",
-      zIndex: -2,
-      pointerEvents: "none",
-      mdDown: {
-        top: "10%",
-        left: "-15%",
-      },
-    },
-    hand2: {
-      position: "fixed",
-      bottom: "-40%",
-      right: "-40%",
-      transform: "scaleX(-1)",
-      rotate: "20deg",
-      width: "95vw",
-      zIndex: -2,
-      pointerEvents: "none",
-      mdDown: {
-        bottom: "15%",
-        right: "-30%",
+        "& > svg": { width: "calc(60% - 56px)", height: "fit-content" },
       },
     },
   },
@@ -118,32 +94,92 @@ export const Header: React.FC = () => {
   const styles = headerStyles();
   const t = useTranslations("header");
 
+  const ref = useRef<HTMLDivElement>(null);
+
   return (
-    <header className={styles.wrapper}>
+    <header className={styles.wrapper} ref={ref}>
+      <HeaderAnimationIntro />
+
       <h1 className={styles.logoContainer}>
         <span className={styles.logo} role="img" aria-label={t("title")}>
-          <LogoSvg1 />
-          <LogoSvg2 />
+          <motion.span
+            initial={{
+              opacity: 0,
+              filter: "blur(30px)",
+              transform: "rotate3d(0, 0, 1, -1deg)",
+              y: -10,
+            }}
+            animate={{
+              opacity: 1,
+              filter: "blur(0px)",
+              transform: "rotate3d(0, 0, 1, 0deg)",
+              y: 0,
+            }}
+            transition={{ delay: 3, duration: 1 }}
+          >
+            <LogoSvg1 />
+          </motion.span>
+          <motion.span
+            initial={{
+              opacity: 0,
+              filter: "blur(30px)",
+              transform: "rotate3d(0, 0, 1, -1deg)",
+              y: -10,
+            }}
+            animate={{
+              opacity: 1,
+              filter: "blur(0px)",
+              transform: "rotate3d(0, 0, 1, 0deg)",
+              y: 0,
+            }}
+            transition={{ delay: 3.4, duration: 1 }}
+          >
+            <LogoSvg2 />
+          </motion.span>
         </span>
       </h1>
-      <p className={styles.titleJapanese}>
+      <motion.p
+        className={styles.titleJapanese}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{ delay: 5, duration: 1 }}
+      >
         <PaltSettingsContainer>{`ライフプロジェクトの\n夜明け前`}</PaltSettingsContainer>
-      </p>
+      </motion.p>
 
-      <p className={styles.description}>
+      <motion.p
+        className={styles.description}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{ delay: 5, duration: 1 }}
+      >
         <PaltSettingsContainer>{t("description")}</PaltSettingsContainer>
-      </p>
+      </motion.p>
 
-      <time
+      <motion.time
         className={styles.time}
         role="img"
         aria-label="2024/10/10 - 2024/10/16"
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{ delay: 5, duration: 1 }}
       >
         <TimeSvg />
-      </time>
+      </motion.time>
 
-      <img src="/images/hand-1.webp" className={styles.hand1} />
-      <img src="/images/hand-2.webp" className={styles.hand2} />
+      <HeaderHands wrapperRef={ref} />
     </header>
   );
 };
