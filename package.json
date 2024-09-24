@@ -1,0 +1,42 @@
+{
+  "name": "the-dawn-of-life-projects",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts",
+    "prepare": "panda codegen"
+  },
+  "packageManager": "yarn@1.22.19",
+  "resolutions": {
+    "string-width": "4.2.3"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "next-intl": "^3.17.4",
+    "palt-typesetting": "^0.7.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-notion": "^0.10.0"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.2",
+    "@cloudflare/workers-types": "^4.20240815.0",
+    "@pandacss/dev": "^0.45.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "eslint-plugin-next-on-pages": "^1.13.2",
+    "typescript": "^5",
+    "vercel": "^36.0.0",
+    "wrangler": "^3.72.0"
+  }
+}
