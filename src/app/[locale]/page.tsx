@@ -6,8 +6,6 @@ import { SectionContent } from "@/components/SectionContent";
 import { SectionDetial } from "@/components/SectionDetial";
 import { Footer } from "@/components/Footer";
 
-export const runtime = "edge";
-
 export const metadata: Metadata = {
   title:
     "THE DAWN OF LIFE PROJECTS | 武蔵野美術大学 クリエイティブイノベーション学科 岩嵜ゼミ学部生展",

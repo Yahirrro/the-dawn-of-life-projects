@@ -18,8 +18,8 @@
     "string-width": "4.2.3"
   },
   "dependencies": {
-    "next": "14.2.5",
-    "next-intl": "^3.17.4",
+    "next": "^14.2.13",
+    "next-intl": "^3.19.4",
     "palt-typesetting": "^0.7.4",
     "react": "^18",
     "react-dom": "^18",
