@@ -11,9 +11,19 @@ const footerStyle = sva({
       borderTop: "2px solid white",
       display: "grid",
       gridTemplateColumns: "repeat(5, 1fr)",
+      mdDown: {
+        gridTemplateColumns: "1fr 1fr",
+        px: "8px",
+        py: "0px",
+        pt: "40px",
+        pb: "12px",
+      },
     },
     container: {
       gridColumn: "1 / 3",
+      mdDown: {
+        gridColumn: "1 / 2",
+      },
     },
     title: {
       fontSize: "14px",

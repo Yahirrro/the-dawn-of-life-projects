@@ -12,15 +12,24 @@ const aboutStyles = sva({
       pb: "196px",
       display: "grid",
       gridTemplateColumns: "repeat(5, 1fr)",
+      mdDown: {
+        gridTemplateColumns: "1fr",
+      },
     },
     content: {
       gridColumn: "1 / 3",
+      mdDown: {
+        gridColumn: "initial",
+      },
     },
 
     backquote: {
       whiteSpace: "pre-wrap",
       fontSize: "24px",
       color: "white",
+      mdDown: {
+        fontSize: "20px",
+      },
     },
     backquoteBack: {
       position: "relative",
@@ -38,6 +47,9 @@ const aboutStyles = sva({
       color: "white",
       mt: "96px",
       mb: "72px",
+      mdDown: {
+        fontSize: "20px",
+      },
     },
   },
 });

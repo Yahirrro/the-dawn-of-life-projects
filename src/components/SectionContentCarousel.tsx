@@ -1,5 +1,6 @@
 import { sva } from "styled-system/css";
 import { IconRose } from "./icon/IconRose";
+import { PaltSettingsContainer } from "./PaltSettingContainer";
 
 const sectioncontentcarouselStyles = sva({
   slots: ["wrapper", "container"],
@@ -67,6 +68,11 @@ const carouselStyles = sva({
           transform: "translateX(70px) rotate(-10deg) translateY(-10px)",
         },
       },
+      mdDown: {
+        height: "60vh",
+        width: "64px",
+        minWidth: "64px",
+      },
     },
     title: {
       writingMode: "vertical-rl",
@@ -74,12 +80,18 @@ const carouselStyles = sva({
       fontSize: "24px",
       alignSelf: "center",
       height: "100%",
+      mdDown: {
+        fontSize: "20px",
+      },
     },
     description: {
       writingMode: "vertical-rl",
       textOrientation: "sideways",
       fontSize: "16px",
       alignContent: "center",
+      mdDown: {
+        fontSize: "14px",
+      },
     },
     icon: {
       writingMode: "vertical-rl",
@@ -94,8 +106,12 @@ const CarouselBook: React.FC<{}> = () => {
   const styles = carouselStyles();
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>これがタイトルだ！</h2>
-      <p className={styles.description}>参加者だ！</p>
+      <h2 className={styles.title}>
+        <PaltSettingsContainer>これがタイトルだ！</PaltSettingsContainer>
+      </h2>
+      <p className={styles.description}>
+        <PaltSettingsContainer>参加者だ！</PaltSettingsContainer>
+      </p>
       <IconRose className={styles.icon} />
     </div>
   );

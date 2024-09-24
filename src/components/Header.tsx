@@ -16,7 +16,7 @@ const headerStyles = sva({
   base: {
     wrapper: {
       position: "relative",
-      height: "100vh",
+      height: "100svh",
       whiteSpace: "pre-wrap",
       zIndex: 1,
     },
@@ -26,9 +26,12 @@ const headerStyles = sva({
       padding: "28px",
       display: "grid",
       gridTemplateColumns: "repeat(5, 1fr)",
+      mdDown: {
+        padding: "8px",
+      },
     },
     logo: {
-      gridColumn: "1 / span 3",
+      gridColumn: "1 / span 5",
       width: "100%",
       maxWidth: "78vh",
       display: "flex",
@@ -48,6 +51,9 @@ const headerStyles = sva({
       fontSize: "33.5px",
       color: "white",
       lineHeight: "1.1",
+      mdDown: {
+        left: "8px",
+      },
     },
     description: {
       position: "absolute",
@@ -57,11 +63,23 @@ const headerStyles = sva({
       color: "white",
       textAlign: "right",
       lineHeight: "1.1",
+      mdDown: {
+        top: "24%",
+        left: "8px",
+        textAlign: "left",
+        width: "calc(70% - 56px)",
+        fontSize: "14.68px",
+      },
     },
     time: {
       position: "absolute",
       bottom: "28px",
       right: "28px",
+      mdDown: {
+        bottom: "25%",
+        left: "8px",
+        "& > svg": { width: "calc(60% - 56px)" },
+      },
     },
 
     hand1: {
@@ -74,6 +92,10 @@ const headerStyles = sva({
       maxWidth: "1670px",
       zIndex: -2,
       pointerEvents: "none",
+      mdDown: {
+        top: "10%",
+        left: "-15%",
+      },
     },
     hand2: {
       position: "fixed",
@@ -84,6 +106,10 @@ const headerStyles = sva({
       width: "95vw",
       zIndex: -2,
       pointerEvents: "none",
+      mdDown: {
+        bottom: "15%",
+        right: "-30%",
+      },
     },
   },
 });
@@ -124,13 +150,7 @@ export const Header: React.FC = () => {
 
 const LogoSvg1: React.FC = () => {
   return (
-    <svg
-      width="830"
-      height="320"
-      viewBox="0 0 830 320"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 830 320" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M3.01952 23.5793L3.01952 8.6704L98.5118 8.6704V23.5793L59.0694 23.5793L59.0694 137H42.462L42.462 23.5793L3.01952 23.5793ZM215.346 8.6704L215.346 137H198.738L198.738 77.9306L131.177 77.9306L131.177 137H114.569L114.569 8.6704L131.177 8.6704V63.0218L198.738 63.0218V8.6704L215.346 8.6704ZM323.366 122.091V137L233.913 137L233.913 8.6704L319.78 8.6704V23.5793L250.52 23.5793V63.5879L313.364 63.5879V78.4968L250.52 78.4968L250.52 122.091L323.366 122.091Z"
         fill="white"

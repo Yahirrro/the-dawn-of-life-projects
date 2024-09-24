@@ -18,6 +18,9 @@ const sectioncontentStyles = sva({
       fontWeight: "bold",
       color: "white",
       mb: "20px",
+      mdDown: {
+        fontSize: "20px",
+      },
     },
   },
 });

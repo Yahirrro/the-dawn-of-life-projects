@@ -66,13 +66,13 @@ export const PaltSettings: React.FC<{
         "& .typesetting-wrapper": {
           fontFeatureSettings: `"palt" on`,
           letterSpacing: "-0.001em",
-          fontWeight: "500",
+          fontWeight: "400",
         },
         "& .typesetting-latin": {
           fontSize: "100.9%",
           verticalAlign: "-0.008em",
           lineHeight: "calc(1.35 / 1.008 - 0.002 * 2)",
-          fontWeight: "740",
+          fontWeight: "500",
         },
       })}
     >

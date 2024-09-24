@@ -6,6 +6,7 @@ import { PaltSettings } from "@/components/PaltSettings";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import TypekitLoader from "@/components/TypekitLoader";
+import { css } from "styled-system/css";
 
 export const metadata: Metadata = {
   title: "plane*",
@@ -29,7 +30,11 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body
+        className={css({
+          bgColor: "#5982AD",
+        })}
+      >
         <NextIntlClientProvider messages={messages}>
           <TypekitLoader />
           <PaltSettings>{children}</PaltSettings>

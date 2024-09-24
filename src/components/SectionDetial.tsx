@@ -10,12 +10,19 @@ const sectiondetialStyles = sva({
       p: "28px",
       pt: "96px",
       pb: "196px",
+      mdDown: {
+        pt: "16px",
+        pb: "128px",
+      },
     },
     title: {
       fontSize: "24px",
       fontWeight: "bold",
       color: "white",
       mb: "64px",
+      mdDown: {
+        mb: "48px",
+      },
     },
   },
 });
@@ -41,6 +48,9 @@ const Calendar = () => {
     <div
       className={css({
         mb: "96px",
+        mdDown: {
+          mb: "64px",
+        },
       })}
     >
       <svg
@@ -73,10 +83,10 @@ const Calendar = () => {
           color: "white",
           fontSize: "24px",
           marginBottom: "16px",
-          whiteSpace: "pre",
+          whiteSpace: "pre-wrap",
         })}
       >
-        {t("calendar-title")}
+        <PaltSettingsContainer>{t("calendar-title")}</PaltSettingsContainer>
       </h2>
 
       <p
@@ -84,11 +94,11 @@ const Calendar = () => {
           color: "white",
           fontSize: "14px",
           lineHeight: "24px",
-          whiteSpace: "pre",
+          whiteSpace: "pre-wrap",
           mb: "48px",
         })}
       >
-        {t("calendar-detail")}
+        <PaltSettingsContainer>{t("calendar-detail")}</PaltSettingsContainer>
       </p>
 
       <p
@@ -96,10 +106,10 @@ const Calendar = () => {
           color: "white",
           fontSize: "14px",
           lineHeight: "24px",
-          whiteSpace: "pre",
+          whiteSpace: "pre-wrap",
         })}
       >
-        {t("calendar-event")}
+        <PaltSettingsContainer>{t("calendar-event")}</PaltSettingsContainer>
       </p>
     </div>
   );
@@ -136,10 +146,10 @@ const Map = () => {
           color: "white",
           fontSize: "24px",
           marginBottom: "16px",
-          whiteSpace: "pre",
+          whiteSpace: "pre-wrap",
         })}
       >
-        {t("location-title")}
+        <PaltSettingsContainer>{t("location-title")}</PaltSettingsContainer>
       </h2>
 
       <p
@@ -147,11 +157,11 @@ const Map = () => {
           color: "white",
           fontSize: "14px",
           lineHeight: "24px",
-          whiteSpace: "pre",
+          whiteSpace: "pre-wrap",
           mb: "38px",
         })}
       >
-        {t("location-detail")}
+        <PaltSettingsContainer>{t("location-detail")}</PaltSettingsContainer>
       </p>
 
       <p
@@ -159,11 +169,11 @@ const Map = () => {
           color: "white",
           fontSize: "14px",
           lineHeight: "24px",
-          whiteSpace: "pre",
+          whiteSpace: "pre-wrap",
           mb: "20px",
         })}
       >
-        {t("location-notice")}
+        <PaltSettingsContainer>{t("location-notice")}</PaltSettingsContainer>
       </p>
 
       <Link
@@ -183,7 +193,7 @@ const Map = () => {
           },
         })}
       >
-        {t("location-access")}
+        <PaltSettingsContainer>{t("location-access")}</PaltSettingsContainer>
       </Link>
     </div>
   );
