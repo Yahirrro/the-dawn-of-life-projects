@@ -35,7 +35,7 @@ export default defineConfig({
 
   globalCss: {
     body: {
-      fontFamily: "Satoshi-Variable, dnp-shuei-gothic-kin-std, sans-serif",
+      fontFamily: "Satoshi-Variable, fot-cezanne-pron, sans-serif",
       margin: 0,
       padding: 0,
     },

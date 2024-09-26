@@ -1,4 +1,4 @@
-import { sva } from "styled-system/css";
+import { css, sva } from "styled-system/css";
 import { PaltSettingsContainer } from "./PaltSettingContainer";
 import { IconRose } from "./icon/IconRose";
 import { useTranslations } from "next-intl";
@@ -8,12 +8,14 @@ const aboutStyles = sva({
   base: {
     container: {
       p: "28px",
-      pt: "128px",
-      pb: "196px",
+      pt: "30vh",
+      pb: "30vh",
       display: "grid",
       gridTemplateColumns: "repeat(5, 1fr)",
       mdDown: {
         gridTemplateColumns: "1fr",
+        pt: "192px",
+        pb: "192px",
       },
     },
     content: {
@@ -93,7 +95,14 @@ export const SectionAbout: React.FC = () => {
           <PaltSettingsContainer>{t("aboutmessage")}</PaltSettingsContainer>
         </p>
 
-        <IconRose />
+        <IconRose
+          className={css({
+            mdDown: {
+              width: "42px",
+              height: "42px",
+            },
+          })}
+        />
       </div>
     </div>
   );

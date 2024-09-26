@@ -8,7 +8,7 @@ const sectioncontentStyles = sva({
   base: {
     wrapper: {
       position: "relative",
-      zIndex: 2,
+      // zIndex: 2,
     },
     container: {
       px: "28px",

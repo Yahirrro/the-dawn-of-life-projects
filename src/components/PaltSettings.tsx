@@ -11,50 +11,50 @@ export const PaltSettings: React.FC<{
     const typesetter = new Typesetter({
       thinSpaceWidth: "0.15em",
       kerningRules: [
-        {
-          between: ["ク", "ノ"],
-          value: "-75",
-        },
-        {
-          between: ["ノ", "ロ"],
-          value: "-10",
-        },
-        {
-          between: ["ロ", "ジ"],
-          value: "-25",
-        },
-        {
-          between: ["物", "語"],
-          value: "2",
-        },
-        {
-          between: ["コ", "レ"],
-          value: "-50",
-        },
-        {
-          between: ["レ", "ク"],
-          value: "-20",
-        },
-        {
-          between: ["ラ", "テ"],
-          value: "-30",
-        },
-        {
-          between: ["テ", "ィ"],
-          value: "-55",
-        },
-        {
-          between: ["ィ", "ブ"],
-          value: "-10",
-        },
-        {
-          between: ["じ", "て"],
-          value: "-15",
-        },
-        {
-          between: ["を", "通"],
-          value: "5",
-        },
+        // {
+        //   between: ["ク", "ノ"],
+        //   value: "-75",
+        // },
+        // {
+        //   between: ["ノ", "ロ"],
+        //   value: "-10",
+        // },
+        // {
+        //   between: ["ロ", "ジ"],
+        //   value: "-25",
+        // },
+        // {
+        //   between: ["物", "語"],
+        //   value: "2",
+        // },
+        // {
+        //   between: ["コ", "レ"],
+        //   value: "-50",
+        // },
+        // {
+        //   between: ["レ", "ク"],
+        //   value: "-20",
+        // },
+        // {
+        //   between: ["ラ", "テ"],
+        //   value: "-30",
+        // },
+        // {
+        //   between: ["テ", "ィ"],
+        //   value: "-55",
+        // },
+        // {
+        //   between: ["ィ", "ブ"],
+        //   value: "-10",
+        // },
+        // {
+        //   between: ["じ", "て"],
+        //   value: "-15",
+        // },
+        // {
+        //   between: ["を", "通"],
+        //   value: "5",
+        // },
       ],
     });
     typesetter.renderToSelector('[aria-controls="typesetting"]');
@@ -65,13 +65,14 @@ export const PaltSettings: React.FC<{
       className={css({
         "& .typesetting-wrapper": {
           fontFeatureSettings: `"palt" on`,
-          letterSpacing: "-0.001em",
+          letterSpacing: "-0.05em",
           fontWeight: "400",
         },
         "& .typesetting-latin": {
-          fontSize: "100.9%",
-          verticalAlign: "-0.008em",
-          lineHeight: "calc(1.35 / 1.008 - 0.002 * 2)",
+          fontSize: "99.3%",
+          verticalAlign: "0.001em",
+          letterSpacing: "0.02em",
+          lineHeight: "calc(1.35 / 0.993 - 0.005 * 2)",
           fontWeight: "500",
         },
       })}
