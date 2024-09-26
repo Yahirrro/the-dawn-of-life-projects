@@ -1,9 +1,37 @@
 import { sva } from "styled-system/css";
 import { PaltSettingsContainer } from "./PaltSettingContainer";
 import { useTranslations } from "next-intl";
+import { Link } from "~/i18n/routing";
+
+const credit = [
+  {
+    role: "Project Manager",
+    name: ["Yuki Yasui"],
+  },
+  {
+    role: "Communication Designer",
+    name: ["Yahiro Nakamoto", "Nina Saijo"],
+  },
+  {
+    role: "Web Development",
+    name: ["Yahiro Nakamoto"],
+  },
+  {
+    role: "Director",
+    name: ["Kanaho Suzuki", "Nao Hashimoto", "Kotomi Ogata"],
+  },
+];
 
 const footerStyle = sva({
-  slots: ["wrapper", "container", "title", "logo"],
+  slots: [
+    "wrapper",
+    "container",
+    "title",
+    "logo",
+    "languageSelect",
+    "credit",
+    "links",
+  ],
   base: {
     wrapper: {
       px: "28px",
@@ -27,26 +55,79 @@ const footerStyle = sva({
     },
     title: {
       fontSize: "14px",
-      fontWeight: "bold",
       color: "white",
       whiteSpace: "pre-wrap",
-      mb: "60px",
+      mb: "24px",
+    },
+    credit: {
+      fontSize: "14px",
+      color: "white",
+      whiteSpace: "pre-wrap",
+      mb: "52px",
+      opacity: 0.5,
     },
     logo: {
       width: "100%",
     },
+    languageSelect: {
+      fontSize: "14px",
+      display: "flex",
+      color: "white",
+      gap: "24px",
+      mb: "48px",
+    },
+    links: {
+      fontSize: "14px",
+      mt: "24px",
+      color: "white",
+      display: "flex",
+      gap: "24px",
+      opacity: 0.5,
+    },
+  },
+  variants: {
+    isPage: {
+      true: {
+        wrapper: {
+          maxWidth: "640px",
+          mx: "auto",
+        },
+      },
+    },
   },
 });
 
-export const Footer: React.FC = () => {
-  const styles = footerStyle();
+export const Footer: React.FC<{
+  isPage?: boolean;
+}> = ({ isPage }) => {
+  const styles = footerStyle({
+    isPage,
+  });
   const t = useTranslations("header");
   return (
     <footer className={styles.wrapper}>
       <div className={styles.container}>
+        <div className={styles.languageSelect}>
+          <Link href={"/"} locale="ja">
+            日本語
+          </Link>
+          <Link href={"/"} locale="en">
+            English
+          </Link>
+        </div>
+
         <h1 className={styles.title}>
           <PaltSettingsContainer>{t("description-wrap")}</PaltSettingsContainer>
         </h1>
+
+        <p className={styles.credit}>
+          {credit.map((c) => (
+            <span key={c.role}>
+              {c.role}: {c.name.join(", ")}
+              <br />
+            </span>
+          ))}
+        </p>
 
         <svg
           viewBox="0 0 553 211"

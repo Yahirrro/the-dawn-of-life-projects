@@ -90,7 +90,7 @@ export const HeaderHands: React.FC<{
     if (isCompact) {
       return percent * -170 + 170;
     }
-    return percent * -50 + 50;
+    return percent * -100 + 100;
   });
 
   const hand1 = useSpring(
@@ -103,10 +103,10 @@ export const HeaderHands: React.FC<{
         if (isCompact) {
           return -170;
         }
-        return -50;
+        return -100;
       }
     }),
-    { bounce: 0 },
+    { bounce: 0 }
   );
 
   const hand2 = useTransform(hand1, (latest) => {

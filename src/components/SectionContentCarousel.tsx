@@ -1,6 +1,8 @@
 import { sva } from "styled-system/css";
 import { IconRose } from "./icon/IconRose";
 import { PaltSettingsContainer } from "./PaltSettingContainer";
+import { Link } from "~/i18n/routing";
+import { getItems } from "./util/getItems";
 
 const sectioncontentcarouselStyles = sva({
   slots: ["wrapper", "container"],
@@ -20,13 +22,20 @@ const sectioncontentcarouselStyles = sva({
   },
 });
 
-export const SectionContentCarousel: React.FC = () => {
+export const SectionContentCarousel: React.FC = async () => {
   const styles = sectioncontentcarouselStyles();
+  const data = await getItems();
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        {Array.from({ length: 15 }).map((_, i) => (
-          <CarouselBook key={i} />
+        {data.map((d, i) => (
+          <CarouselBook
+            key={i}
+            title={d.title}
+            id={d.id}
+            description={d.description}
+            author={d.author}
+          />
         ))}
       </div>
     </div>
@@ -102,17 +111,27 @@ const carouselStyles = sva({
   },
 });
 
-const CarouselBook: React.FC<{}> = () => {
+const CarouselBook: React.FC<{
+  id: string;
+  title: string;
+  description: string;
+  author: string;
+}> = ({ id, title, description, author }) => {
   const styles = carouselStyles();
   return (
-    <div className={styles.container}>
+    <Link
+      href={"/item/" + id}
+      passHref
+      className={styles.container}
+      scroll={false}
+    >
       <h2 className={styles.title}>
-        <PaltSettingsContainer>これがタイトルだ！</PaltSettingsContainer>
+        <PaltSettingsContainer>{title}</PaltSettingsContainer>
       </h2>
       <p className={styles.description}>
-        <PaltSettingsContainer>参加者だ！</PaltSettingsContainer>
+        <PaltSettingsContainer>{author}</PaltSettingsContainer>
       </p>
       <IconRose className={styles.icon} />
-    </div>
+    </Link>
   );
 };

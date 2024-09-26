@@ -20,9 +20,11 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
+  modal,
   children,
   params: { locale },
 }: Readonly<{
+  modal: React.ReactNode;
   children: React.ReactNode;
   params: { locale: string };
 }>) {
@@ -37,7 +39,10 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <TypekitLoader />
-          <PaltSettings>{children}</PaltSettings>
+          <PaltSettings>
+            {modal}
+            {children}
+          </PaltSettings>
         </NextIntlClientProvider>
       </body>
     </html>
