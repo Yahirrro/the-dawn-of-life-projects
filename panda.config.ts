@@ -27,7 +27,7 @@ export default defineConfig({
       src: `url("../../public/fonts/Satoshi-Variable.woff2") format("woff2"),
         url("../../public/fonts/Satoshi-Variable.woff") format("woff"),
         url("../../public/fonts/Satoshi-Variable.ttf") format("truetype")`,
-      fontWeight: "500",
+      fontWeight: "480",
       fontDisplay: "swap",
       fontStyle: "normal",
     },

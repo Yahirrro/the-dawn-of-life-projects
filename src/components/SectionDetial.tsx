@@ -86,7 +86,7 @@ const Calendar = () => {
           whiteSpace: "pre-wrap",
         })}
       >
-        <PaltSettingsContainer>{t("calendar-title")}</PaltSettingsContainer>
+        {t("calendar-title")}
       </h2>
 
       <p
