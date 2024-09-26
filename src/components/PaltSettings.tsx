@@ -65,7 +65,7 @@ export const PaltSettings: React.FC<{
       className={css({
         "& .typesetting-wrapper": {
           fontFeatureSettings: `"palt" on`,
-          letterSpacing: "-0.05em",
+          letterSpacing: "-0.015em",
           fontWeight: "400",
         },
         "& .typesetting-latin": {
