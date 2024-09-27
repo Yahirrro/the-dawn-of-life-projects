@@ -3,21 +3,29 @@ import type { Metadata } from "next";
 import "./../globals.css";
 import "palt-typesetting/dist/typesetter.css";
 import { PaltSettings } from "@/components/PaltSettings";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import TypekitLoader from "@/components/TypekitLoader";
 import { css } from "styled-system/css";
 
-export const metadata: Metadata = {
-  title: "plane*",
-  description:
-    "plane* is a collective exploring digital product expression through technology, culture, and narrative.",
-  openGraph: {
-    siteName: "plane*",
-    type: "website",
-    url: "https://planeverything.co",
-  },
-};
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({ locale, namespace: "metadata" });
+  return {
+    title: t("title"),
+    description: t("description"),
+    locale: locale,
+    openGraph: {
+      siteName: t("title"),
+      type: "website",
+      url: "https://the-dawn-of-life-projects.vercel.app/" + locale,
+      locale: locale,
+    },
+  };
+}
 
 export default async function RootLayout({
   modal,

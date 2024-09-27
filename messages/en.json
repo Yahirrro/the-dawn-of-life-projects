@@ -1,25 +1,33 @@
 {
+  "metadata": {
+    "title": "THE DAWN OF LIFE PROJECTS",
+    "description": "The exhibition 'THE DAWN OF LIFE PROJECTS' by the 4th-year students of Professor Hironori Iwasaki's Creative Innovation Department at Musashino Art University showcases part of the graduation project process that we, the 4th-year students in Iwasaki Seminar, are working on in preparation for graduation."
+  },
   "header": {
     "title": "THE DAWN OF LIFE PROJECTS",
-    "description": "Musashino Art University Institute of Creative Innovation\nIwasaki Seminar Undergraduate Exhibition",
-    "description-wrap": "Musashino Art University Faculty of Creative Thinking for Social Innovation\nInstitute of Creative Innovation\nIwasaki Seminar Undergraduate Exhibition"
+    "description": "Musashino Art University Creative Innovation Department\nProfessor Hironori Iwasaki's Laboratory 4th-Year Students Seminar Exhibition",
+    "description-wrap": "Musashino Art University College of Creative Thinking for Social Innovation\nDepartment of Creative Innovation\nProfessor Hironori Iwasaki's Laboratory\n4th-Year Students Seminar Exhibition"
   },
   "section-about": {
-    "backquote": "Because each of our journeys has been different, you have a unique color that only you can produce. Even if it's an activity that already exists in the world, it will naturally take on a different hue due to the local context in which it operates and your own personality as the one carrying it out.\n\nSuch colors, originating from each individual 'me,' remain distinct while gently overlapping. Instead of thinking 'You're bothered by this, that's completely different from me,' we can feel a connection somewhere, resonate, and join hands even as we move in different directions.",
-    "quotefrom": "From 'Creative Democracy Beginning with 'Me'",
-    "aboutmessage": "In THE DAWN OF LIFE PROJECTS, we, the fourth-year students of the Iwasaki Seminar, will showcase a part of the process of our graduation projects that we are working on towards graduation."
+    "backquote": "Because each of our journeys has been different, there are colors that only you can bring forth. Even if it's an activity that already exists in society, it will naturally take on different hues due to the local context in which it's practiced and your unique character as the practitioner.\n\nStarting from 'me', the individual colors of each person remain independent while gently overlapping. Instead of saying 'You're troubled by this, you're totally different from me', it's about feeling a connection somewhere, resonating, and being able to join hands even as we move towards different things.",
+    "quotefrom": "From 'Creative Democracy Starting from Me'",
+    "aboutmessage": "In 'THE DAWN OF LIFE PROJECTS', we, the 4th-year students of Iwasaki Seminar, will showcase part of the graduation project process we are working on in preparation for graduation."
   },
   "section-content": {
-    "title": "Exhibitors and Exhibition Contents"
+    "title": "Exhibitors and Exhibition Content"
   },
   "section-detial": {
     "title": "Event Overview",
-    "calendar-title": "From Friday, October 11, 2024\nto Wednesday, October 16",
-    "calendar-detail": "Open from 10:00 AM to 8:00 PM\nNo reservation required for entry.",
-    "calendar-event": "A public critique session will be held on Wednesday, October 16, from 1:20 PM to 4:30 PM.\nFeel free to participate.",
-    "location-title": "Musashino Art University Ichigaya Campus, 2nd Floor",
+    "calendar-title": "Held from Friday, October 11, 2024 to\nWednesday, October 16",
+    "calendar-detail": "Open from 10:00 to 20:00\nNo reservation required for entry.",
+    "calendar-event": "On Wednesday, October 16, from 13:20 to 16:30, a public critique will be held.\nFeel free to join.",
+    "location-title": "Musashino Art University\nIchigaya Campus 2F",
     "location-detail": "1-4 Ichigayatamachi, Shinjuku-ku, Tokyo 162-0843",
-    "location-notice": "Please enter the 2nd floor via the stairs at MUJI.",
-    "location-access": "Click here for detailed access information"
+    "location-notice": "Please enter the second floor via the MUJI staircase.",
+    "location-access": "Access details here"
+  },
+  "exibition-modal": {
+    "exhibition": "展示",
+    "share": "共有する"
   }
 }

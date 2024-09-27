@@ -4,10 +4,49 @@ import { Link } from "~/i18n/routing";
 import { css } from "styled-system/css";
 import { useTranslations } from "next-intl";
 import { getItems } from "~/components/util/getItems";
+import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { Metadata } from "next/types";
+
+export async function generateMetadata({
+  params: { locale, itemId },
+}: {
+  params: { locale: string; itemId: string };
+}): Promise<Metadata> {
+  const data = await getItems();
+  const item = data.find((d) => d.id === itemId);
+
+  if (!item) {
+    return notFound();
+  }
+
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: item.title + " | " + item.author + " | " + t("title"),
+    description: item.description,
+    openGraph: {
+      siteName: t("title"),
+      title: item.title + " | " + item.author,
+      description: item.description,
+      type: "article",
+      url:
+        "https://the-dawn-of-life-projects.vercel.app/" +
+        locale +
+        "/item/" +
+        item.id,
+      locale: locale,
+    },
+  };
+}
 
 export default async function Page({ params }: { params: { itemId: string } }) {
   const data = await getItems();
   const item = data.find((d) => d.id === params.itemId);
+
+  if (!item) {
+    return notFound();
+  }
 
   return (
     <>
@@ -21,7 +60,7 @@ export default async function Page({ params }: { params: { itemId: string } }) {
           pb: "48px",
         })}
       >
-        <Link href={"/"}>
+        <a href={"/"}>
           <h1>
             <span role="img" aria-label={"the drawn of life projects"}>
               <svg
@@ -122,7 +161,7 @@ export default async function Page({ params }: { params: { itemId: string } }) {
               </svg>
             </span>
           </h1>
-        </Link>
+        </a>
       </nav>
 
       <article>

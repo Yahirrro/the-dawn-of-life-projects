@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "THE DAWN OF LIFE PROJECTS",
+    "description": "武蔵野美術大学クリエイティブイノベーション学科岩嵜博論研究室学部4年生ゼミ展「THE DAWN OF LIFE PROJECTS『ライフプロジェクトの夜明け前』」は、私たち岩嵜ゼミ学部4年生が卒業に向けて取り組んでいる、卒業制作の過程の一部をお見せする展示です。"
+  },
   "header": {
     "title": "THE DAWN OF LIFE PROJECTS",
     "description": "武蔵野美術大学 クリエイティブイノベーション学科\n岩嵜博論研究室 学部4年生ゼミ展",
@@ -10,16 +14,20 @@
     "aboutmessage": "THE DAWN OF LIFE PROJECTS 「ライフプロジェクトの夜明け前」では、私たち岩嵜ゼミ学部4年生が卒業に向けて取り組んでいる、卒業制作の過程の一部をお見せします。"
   },
   "section-content": {
-    "title": "展示者と展示内容"
+    "title": "メンバーと展示内容"
   },
   "section-detial": {
     "title": "開催概要",
     "calendar-title": "2024年10月11日 (金) から\n16日 (水) まで開催",
     "calendar-detail": "10:00 - 20:00まで開場\n入場にご予約は不要です。",
-    "calendar-event": "10月16日 (水)  13:20 - 16:30にて、公開講評を行います。\nご自由にご参加ください。",
+    "calendar-event": "10月16日 (水)  13:20 - 16:30にて、担当教員岩嵜による公開講評を行います。\nご自由にご参加ください。",
     "location-title": "武蔵野美術大学\n市ヶ谷キャンパス 2F",
     "location-detail": "〒162-0843 東京都新宿区市谷田町１丁目４",
     "location-notice": "無印良品の階段から2階へお入りください。",
     "location-access": "アクセス詳細はこちら"
+  },
+  "exibition-modal": {
+    "exhibition": "展示",
+    "share": "共有する"
   }
 }

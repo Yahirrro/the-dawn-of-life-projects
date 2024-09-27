@@ -14,7 +14,11 @@ export const getItems: () => Promise<
     title: string;
     description: string;
     author: string;
-  }[] = await fetch(url).then((res) => res.json());
+  }[] = await fetch(url, {
+    next: {
+      revalidate: 10,
+    },
+  }).then((res) => res.json());
 
   // uuidのハイフンを無くし整形
   return data.map((d) => ({

@@ -5,13 +5,25 @@ import { SectionAbout } from "@/components/SectionAbout";
 import { SectionContent } from "@/components/SectionContent";
 import { SectionDetial } from "@/components/SectionDetial";
 import { Footer } from "@/components/Footer";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title:
-    "THE DAWN OF LIFE PROJECTS | 武蔵野美術大学 クリエイティブイノベーション学科 岩嵜ゼミ学部生展",
-  description:
-    "武蔵野美術大学 クリエイティブイノベーション学科 岩嵜ゼミ学部生展",
-};
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({ locale, namespace: "metadata" });
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      siteName: t("title"),
+      type: "website",
+      url: "https://the-dawn-of-life-projects.vercel.app/" + locale,
+      locale: locale,
+    },
+  };
+}
 
 const homeStyles = sva({
   slots: ["wrapper"],

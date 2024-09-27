@@ -3,8 +3,10 @@
 import { Share } from "lucide-react";
 import { Button } from "./ui/button";
 import { css } from "styled-system/css";
+import { useTranslations } from "next-intl";
 
 export const ItemContentShare: React.FC = () => {
+  const t = useTranslations("exibition-modal");
   return (
     <Button
       variant={"ghost"}
@@ -20,7 +22,7 @@ export const ItemContentShare: React.FC = () => {
         transform: "translateX(-20px)",
       })}
     >
-      共有する
+      {t("share")}
       <Share />
     </Button>
   );

@@ -1,12 +1,47 @@
 import { Dialog } from "@ark-ui/react";
 import { Icon, Share, XIcon } from "lucide-react";
+import { Metadata } from "next";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
 import { css, sva } from "styled-system/css";
 import { ItemContentShare } from "~/components/ItemContentShare";
 import { ItemCotentWrapper } from "~/components/ItemContentWrapper";
 import { ItemModal } from "~/components/ItemModal";
 import { PaltSettingsContainer } from "~/components/PaltSettingContainer";
-import { Button } from "~/components/ui/button";
-import { IconButton } from "~/components/ui/icon-button";
+import { getItems } from "~/components/util/getItems";
+
+export async function generateMetadata({
+  params: { locale, itemId },
+}: {
+  params: { locale: string; itemId: string };
+}): Promise<Metadata> {
+  const data = await getItems();
+  const item = data.find((d) => d.id === itemId);
+
+  if (!item) {
+    return notFound();
+  }
+
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: item.title + " | " + item.author + " | " + t("title"),
+    description: item.description,
+    openGraph: {
+      siteName: t("title"),
+      title: item.title + " | " + item.author,
+      description: item.description,
+      type: "article",
+      url:
+        "https://the-dawn-of-life-projects.vercel.app/" +
+        locale +
+        "/item/" +
+        item.id,
+      locale: locale,
+    },
+  };
+}
 
 export default function Page({ params }: { params: { itemId: string } }) {
   return (
@@ -88,6 +123,7 @@ export const ItemContent: React.FC<{
   author?: string;
   description?: string;
 }> = ({ isPage, title, author, description }) => {
+  const t = useTranslations("exibition-modal");
   const styles = itemContentStyles({
     isPage,
   });
@@ -101,7 +137,7 @@ export const ItemContent: React.FC<{
               mb: "8px",
             })}
           >
-            <PaltSettingsContainer>展示</PaltSettingsContainer>
+            <PaltSettingsContainer>{t("exhibition")}</PaltSettingsContainer>
           </p>
 
           <h1 className={styles.title}>

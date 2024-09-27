@@ -2,6 +2,7 @@ import { sva } from "styled-system/css";
 import { PaltSettingsContainer } from "./PaltSettingContainer";
 import { useTranslations } from "next-intl";
 import { Link } from "~/i18n/routing";
+import { FooterLanguageSelect } from "./FooterLanguageSelect";
 
 const credit = [
   {
@@ -107,14 +108,7 @@ export const Footer: React.FC<{
   return (
     <footer className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.languageSelect}>
-          <Link href={"/"} locale="ja">
-            日本語
-          </Link>
-          <Link href={"/"} locale="en">
-            English
-          </Link>
-        </div>
+        <FooterLanguageSelect />
 
         <h1 className={styles.title}>
           <PaltSettingsContainer>{t("description-wrap")}</PaltSettingsContainer>
