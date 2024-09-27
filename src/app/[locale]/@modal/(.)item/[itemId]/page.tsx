@@ -1,69 +1,18 @@
-"use client";
-
 import { Dialog } from "@ark-ui/react";
 import { Icon, Share, XIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { css, sva } from "styled-system/css";
+import { ItemContentShare } from "~/components/ItemContentShare";
 import { ItemCotentWrapper } from "~/components/ItemContentWrapper";
+import { ItemModal } from "~/components/ItemModal";
 import { PaltSettingsContainer } from "~/components/PaltSettingContainer";
 import { Button } from "~/components/ui/button";
 import { IconButton } from "~/components/ui/icon-button";
 
 export default function Page({ params }: { params: { itemId: string } }) {
-  const router = useRouter();
-
   return (
-    <article
-      onClick={(e) => {
-        router.back();
-      }}
-      className={css({
-        position: "fixed",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        zIndex: 100,
-        _after: {
-          content: "''",
-          position: "fixed",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "100vw",
-          height: "100vh",
-          zIndex: -1,
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-        },
-      })}
-    >
-      <div
-        className={css({
-          position: "relative",
-          zIndex: 100,
-        })}
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-      >
-        <IconButton
-          variant={"ghost"}
-          aria-label="Next Page"
-          onClick={() => {
-            router.back();
-          }}
-          size={"xl"}
-          className={css({
-            position: "absolute",
-            top: "16px",
-            right: "16px",
-            zIndex: 1000,
-          })}
-        >
-          <XIcon color="white" size={32} />
-        </IconButton>
-        <ItemCotentWrapper itemId={params.itemId} />
-      </div>
-    </article>
+    <ItemModal>
+      <ItemCotentWrapper itemId={params.itemId} />
+    </ItemModal>
   );
 }
 
@@ -180,22 +129,7 @@ export const ItemContent: React.FC<{
       </p>
 
       <footer className={styles.footer}>
-        <Button
-          variant={"ghost"}
-          aria-label="share"
-          onClick={() => {
-            navigator.share({
-              title: "生きるということ。",
-              text: "村上春樹",
-              url: window.location.href,
-            });
-          }}
-          color="white"
-          size={"xl"}
-        >
-          共有する
-          <Share />
-        </Button>
+        <ItemContentShare />
       </footer>
     </div>
   );

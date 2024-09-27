@@ -30,6 +30,9 @@ export default async function Page({ params }: { params: { itemId: string } }) {
                 xmlns="http://www.w3.org/2000/svg"
                 className={css({
                   height: "120px",
+                  mdDown: {
+                    height: "80px",
+                  },
                 })}
               >
                 <path
