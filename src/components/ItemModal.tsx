@@ -5,13 +5,26 @@ import { ItemCotentWrapper } from "./ItemContentWrapper";
 import { IconButton } from "./ui/icon-button";
 import { useRouter } from "next/navigation";
 import { css } from "styled-system/css";
+import { motion } from "framer-motion";
 
 export const ItemModal: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
   const router = useRouter();
   return (
-    <article
+    <motion.article
+      initial={{
+        opacity: 0,
+        transform: "translate(-50%, calc(-50% + -10px))",
+        filter: "blur(10px)",
+      }}
+      animate={{
+        opacity: 1,
+        transform: "translate(-50%, calc(-50% + 0px))",
+        filter: "blur(0px)",
+      }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3, filter: { duration: 0.7 } }}
       onClick={(e) => {
         router.back();
       }}
@@ -19,8 +32,8 @@ export const ItemModal: React.FC<{
         position: "fixed",
         top: "50%",
         left: "50%",
-        transform: "translate(-50%, -50%)",
         zIndex: 100,
+        transform: "translate(-50%, -50%)",
         _after: {
           content: "''",
           position: "fixed",
@@ -30,14 +43,13 @@ export const ItemModal: React.FC<{
           width: "100vw",
           height: "100vh",
           zIndex: -1,
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          backgroundColor: "rgba(0, 0, 0, 0.45)",
         },
       })}
     >
       <div
         className={css({
           position: "relative",
-          zIndex: 100,
         })}
         onClick={(e) => {
           e.stopPropagation();
@@ -62,6 +74,6 @@ export const ItemModal: React.FC<{
 
         {children}
       </div>
-    </article>
+    </motion.article>
   );
 };

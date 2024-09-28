@@ -7,6 +7,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import TypekitLoader from "@/components/TypekitLoader";
 import { css } from "styled-system/css";
+import { AnimationProvider } from "~/components/AnimateUtils";
 
 export async function generateMetadata({
   params: { locale },
@@ -48,8 +49,10 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <TypekitLoader />
           <PaltSettings>
-            {modal}
-            {children}
+            <AnimationProvider>
+              {modal}
+              {children}
+            </AnimationProvider>
           </PaltSettings>
         </NextIntlClientProvider>
       </body>
