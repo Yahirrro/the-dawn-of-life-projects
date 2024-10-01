@@ -40,6 +40,11 @@ const footerStyle = sva({
       borderTop: "2px solid white",
       display: "grid",
       gridTemplateColumns: "repeat(5, 1fr)",
+      zIndex: 1,
+      lgDown: {
+        zIndex: "initial",
+      },
+      position: "relative",
       mdDown: {
         gridTemplateColumns: "1fr 1fr",
         px: "8px",

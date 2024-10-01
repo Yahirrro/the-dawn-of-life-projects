@@ -12,10 +12,15 @@ const aboutStyles = sva({
       pb: "30vh",
       display: "grid",
       gridTemplateColumns: "repeat(5, 1fr)",
+      zIndex: 1,
+      position: "relative",
       mdDown: {
         gridTemplateColumns: "1fr",
         pt: "192px",
         pb: "192px",
+      },
+      lgDown: {
+        zIndex: "initial",
       },
     },
     content: {

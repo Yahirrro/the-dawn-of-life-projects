@@ -18,42 +18,45 @@ const headerHandsStyle = sva({
   base: {
     hand1: {
       position: "fixed",
-      top: "-30%",
-      left: "-15%",
-      width: "95vw",
+      top: "-5%",
+      left: "-5%",
+      width: "80vw",
       zIndex: -2,
       pointerEvents: "none",
       "2xl": {
         width: "120vh",
-        left: "0%",
+        top: "-10%",
+        left: "-2%",
       },
       xlDown: {
-        top: "-40%",
-        left: "-10%",
+        top: "-0%",
+        left: "-5%",
       },
       lgDown: {
-        top: "10%",
-        left: "-15%",
+        top: "18%",
+        left: "-10%",
+        width: "90vw",
       },
     },
     hand2: {
       position: "fixed",
-      bottom: "-20%",
-      right: "-40%",
-      width: "95vw",
+      bottom: "-15%",
+      right: "-20%",
+      width: "65vw",
       zIndex: -2,
       pointerEvents: "none",
       "2xl": {
-        width: "120vh",
-        right: "-20%",
+        width: "95vh",
+        right: "-10%",
       },
       xlDown: {
-        bottom: "-40vh",
-        right: "-35%",
+        bottom: "-5%",
+        right: "-15%",
       },
       lgDown: {
-        bottom: "15%",
-        right: "-30%",
+        bottom: "25%",
+        right: "-10%",
+        width: "70vw",
       },
     },
   },
@@ -106,7 +109,7 @@ export const HeaderHands: React.FC<{
         return -100;
       }
     }),
-    { bounce: 0 }
+    { bounce: 0 },
   );
 
   const hand2 = useTransform(hand1, (latest) => {
@@ -125,7 +128,7 @@ export const HeaderHands: React.FC<{
           alt="hand1"
           src="/images/hand-1.webp"
           style={{
-            transform: "scaleX(-1) rotate(-45deg)",
+            transform: "rotate(10deg)",
           }}
         />
       </motion.div>
@@ -139,8 +142,8 @@ export const HeaderHands: React.FC<{
           alt="hand2"
           src="/images/hand-2.webp"
           style={{
-            transform: "scaleX(-1)",
-            rotate: "20deg",
+            // transform: "scaleX(-1)",
+            rotate: "0deg",
           }}
         />
       </motion.div>

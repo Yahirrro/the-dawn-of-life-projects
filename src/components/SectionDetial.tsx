@@ -10,6 +10,11 @@ const sectiondetialStyles = sva({
       p: "28px",
       pt: "96px",
       pb: "196px",
+      zIndex: 1,
+      lgDown: {
+        zIndex: "initial",
+      },
+      position: "relative",
       mdDown: {
         pt: "16px",
         pb: "128px",

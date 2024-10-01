@@ -13,17 +13,24 @@ export async function generateMetadata({
   params: { locale },
 }: {
   params: { locale: string };
-}) {
+}): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "metadata" });
   return {
     title: t("title"),
     description: t("description"),
-    locale: locale,
     openGraph: {
       siteName: t("title"),
       type: "website",
       url: "https://the-dawn-of-life-projects.vercel.app/" + locale,
       locale: locale,
+      images: [
+        {
+          url: "https://the-dawn-of-life-projects.vercel.app/ogp.jpg",
+          width: 1200,
+          height: 675,
+          alt: t("title"),
+        },
+      ],
     },
   };
 }
