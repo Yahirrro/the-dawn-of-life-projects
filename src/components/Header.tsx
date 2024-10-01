@@ -95,6 +95,10 @@ const headerStyles = sva({
       left: "8px",
       color: "white",
       letterSpacing: "-0.05em",
+      display: "none",
+      lgDown: {
+        display: "block",
+      },
     },
   },
 });
