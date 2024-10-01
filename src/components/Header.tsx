@@ -18,6 +18,7 @@ const headerStyles = sva({
     "time",
     "hand1",
     "hand2",
+    "timelg",
   ],
   base: {
     wrapper: {
@@ -82,10 +83,18 @@ const headerStyles = sva({
       bottom: "28px",
       right: "28px",
       lgDown: {
+        display: "none",
         bottom: "25%",
         left: "8px",
         "& > svg": { width: "calc(60% - 56px)", height: "fit-content" },
       },
+    },
+    timelg: {
+      position: "absolute",
+      bottom: "25%",
+      left: "8px",
+      color: "white",
+      letterSpacing: "-0.05em",
     },
   },
 });
@@ -93,6 +102,7 @@ const headerStyles = sva({
 export const Header: React.FC = () => {
   const styles = headerStyles();
   const t = useTranslations("header");
+  const t2 = useTranslations("section-detial");
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -177,6 +187,19 @@ export const Header: React.FC = () => {
         transition={{ delay: 5, duration: 1 }}
       >
         <TimeSvg />
+      </motion.time>
+
+      <motion.time
+        className={styles.timelg}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{ delay: 5, duration: 1 }}
+      >
+        {t2("calendar-title")}
       </motion.time>
 
       <HeaderHands wrapperRef={ref} />
