@@ -16,8 +16,8 @@ const aboutStyles = sva({
       position: "relative",
       mdDown: {
         gridTemplateColumns: "1fr",
-        pt: "192px",
-        pb: "192px",
+        pt: "220px",
+        pb: "180px",
       },
       lgDown: {
         zIndex: "initial",

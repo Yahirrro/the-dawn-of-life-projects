@@ -91,7 +91,7 @@ export const HeaderHands: React.FC<{
   const scrollingY_hand1 = useTransform(scrollY, (latest) => {
     const percent = latest / (height / 2);
     if (isCompact) {
-      return percent * -170 + 170;
+      return percent * -190 + 190;
     }
     return percent * -100 + 100;
   });
@@ -104,12 +104,12 @@ export const HeaderHands: React.FC<{
         return latest;
       } else {
         if (isCompact) {
-          return -170;
+          return -190;
         }
         return -100;
       }
     }),
-    { bounce: 0 },
+    { bounce: 0 }
   );
 
   const hand2 = useTransform(hand1, (latest) => {
