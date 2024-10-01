@@ -43,7 +43,7 @@ export const SectionContentCarousel: React.FC = async () => {
 };
 
 const carouselStyles = sva({
-  slots: ["container", "title", "description", "icon"],
+  slots: ["container", "title", "description", "icon", "iconWrapper"],
   base: {
     container: {
       height: "70vh",
@@ -88,7 +88,9 @@ const carouselStyles = sva({
       textOrientation: "sideways",
       fontSize: "24px",
       alignSelf: "center",
+      lineHeight: "1.1",
       height: "100%",
+      alignContent: "center",
       mdDown: {
         fontSize: "20px",
       },
@@ -107,6 +109,12 @@ const carouselStyles = sva({
       textOrientation: "sideways",
       width: "36px",
       height: "36px",
+      alignContent: "center",
+    },
+    iconWrapper: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
     },
   },
 });
@@ -131,7 +139,9 @@ const CarouselBook: React.FC<{
       <p className={styles.description}>
         <PaltSettingsContainer>{author}</PaltSettingsContainer>
       </p>
-      <IconRose className={styles.icon} />
+      <div className={styles.iconWrapper}>
+        <IconRose className={styles.icon} />
+      </div>
     </Link>
   );
 };
