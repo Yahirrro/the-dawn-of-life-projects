@@ -1,33 +1,34 @@
 {
   "metadata": {
     "title": "THE DAWN OF LIFE PROJECTS",
-    "description": "The exhibition 'THE DAWN OF LIFE PROJECTS' by the 4th-year students of Professor Hironori Iwasaki's Creative Innovation Department at Musashino Art University showcases part of the graduation project process that we, the 4th-year students in Iwasaki Seminar, are working on in preparation for graduation."
+    "description": "The 4th-year seminar exhibition 'THE DAWN OF LIFE PROJECTS' by Professor Hironori Iwasaki's research lab in the Department of Creative Innovation at Musashino Art University showcases a part of our graduation project process as we approach graduation."
   },
   "header": {
     "title": "THE DAWN OF LIFE PROJECTS",
-    "description": "Musashino Art University Creative Innovation Department\nProfessor Hironori Iwasaki's Laboratory 4th-Year Students Seminar Exhibition",
-    "description-wrap": "Musashino Art University College of Creative Thinking for Social Innovation\nDepartment of Creative Innovation\nProfessor Hironori Iwasaki's Laboratory\n4th-Year Students Seminar Exhibition"
+    "description": "Musashino Art University Department of Creative Innovation\nProfessor Hironori Iwasaki's Research Lab 4th-year Seminar Exhibition",
+    "description-wrap": "Musashino Art University\nCollege of Art and Design\nDepartment of Creative Innovation\nProfessor Hironori Iwasaki's Research Lab\n4th-year Seminar Exhibition",
+    "calendar-title": "October 10 (Thu), 2024 →\nOctober 15 (Tue), 2024"
   },
   "section-about": {
-    "backquote": "Because each of our journeys has been different, there are colors that only you can bring forth. Even if it's an activity that already exists in society, it will naturally take on different hues due to the local context in which it's practiced and your unique character as the practitioner.\n\nStarting from 'me', the individual colors of each person remain independent while gently overlapping. Instead of saying 'You're troubled by this, you're totally different from me', it's about feeling a connection somewhere, resonating, and being able to join hands even as we move towards different things.",
-    "quotefrom": "From 'Creative Democracy Starting from Me'",
-    "aboutmessage": "In 'THE DAWN OF LIFE PROJECTS', we, the 4th-year students of Iwasaki Seminar, will showcase part of the graduation project process we are working on in preparation for graduation."
+    "backquote": "Because each of our journeys has been different, you have a unique color that only you can produce. Even if it's an activity that already exists in the world, it will naturally take on a different hue due to the local context in which it's conducted and your personality as the one conducting it.\n\nSuch colors that begin with 'me' remain independent while gently overlapping. Instead of thinking 'You're bothered by this, that's completely different from me,' we can feel that it resonates with us somewhere, empathize, and join hands even as we move in different directions.",
+    "quotefrom": "From 'Creative Democracy Starting from 'Me''",
+    "aboutmessage": "At THE DAWN OF LIFE PROJECTS, we, the 4th-year students of Professor Iwasaki's seminar, will showcase a part of our graduation project process as we approach graduation."
   },
   "section-content": {
-    "title": "Exhibitors and Exhibition Content"
+    "title": "Members and Exhibition Contents"
   },
   "section-detial": {
-    "title": "Event Overview",
-    "calendar-title": "Held from Friday, October 11, 2024 to\nTuesday, October 1T",
-    "calendar-detail": "Open from 10:00 to 20:00\nNo reservation required for entry.",
-    "calendar-event": "On Monday, October 14, from 13:20 to 16:30, a public critique will be held.\nFeel free to join.",
+    "title": "Event Details",
+    "calendar-title": "From October 10 (Thu), 2024 to\nOctober 15 (Tue), 2024",
+    "calendar-detail": "Open from 10:00 AM to 8:00 PM\nNo reservation required for entry.",
+    "calendar-event": "On October 14 (Mon) from 3:00 PM to 6:10 PM, there will be a public critique by Professor Iwasaki.\nFeel free to participate.",
     "location-title": "Musashino Art University\nIchigaya Campus 2F",
-    "location-detail": "1-4 Ichigayatamachi, Shinjuku-ku, Tokyo 162-0843",
-    "location-notice": "Please enter the second floor via the MUJI staircase.",
+    "location-detail": "1-4 Ichigaya-Tamachi, Shinjuku-ku, Tokyo 162-0843",
+    "location-notice": "Please enter the 2nd floor from the MUJI staircase.",
     "location-access": "Access details here"
   },
   "exibition-modal": {
-    "exhibition": "展示",
-    "share": "共有する"
+    "exhibition": "Exhibition",
+    "share": "Share"
   }
 }

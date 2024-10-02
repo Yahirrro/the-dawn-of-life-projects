@@ -203,7 +203,7 @@ export const Header: React.FC = () => {
         }}
         transition={{ delay: 5, duration: 1 }}
       >
-        {t2("calendar-title")}
+        {t("calendar-title")}
       </motion.time>
 
       <HeaderHands wrapperRef={ref} />
