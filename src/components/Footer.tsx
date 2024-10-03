@@ -1,4 +1,4 @@
-import { sva } from "styled-system/css";
+import { css, sva } from "styled-system/css";
 import { PaltSettingsContainer } from "./PaltSettingContainer";
 import { useTranslations } from "next-intl";
 import { Link } from "~/i18n/routing";
@@ -126,6 +126,16 @@ export const Footer: React.FC<{
               <br />
             </span>
           ))}
+          <span
+            className={css({
+              mt: "12px",
+              display: "block",
+            })}
+          >
+            <a href="https://github.com/Yahirrro/the-dawn-of-life-projects">
+              {`The website's code is available here`}
+            </a>
+          </span>
         </p>
 
         <svg
