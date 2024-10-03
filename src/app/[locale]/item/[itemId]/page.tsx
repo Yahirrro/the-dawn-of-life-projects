@@ -38,7 +38,7 @@ export async function generateMetadata({
       locale: locale,
       images: [
         {
-          url: "https://the-dawn-of-life-projects.vercel.app/ogp.jpg",
+          url: "https://the-dawn-of-life-projects.vercel.app/ogp-1.jpg",
           width: 1200,
           height: 675,
           alt: t("title"),
