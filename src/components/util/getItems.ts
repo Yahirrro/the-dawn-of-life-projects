@@ -16,7 +16,8 @@ export const getItems: () => Promise<
     author: string;
   }[] = await fetch(url, {
     next: {
-      revalidate: 3600 * 6,
+      revalidate: 0,
+      tags: ["items"],
     },
   }).then((res) => res.json());
 
