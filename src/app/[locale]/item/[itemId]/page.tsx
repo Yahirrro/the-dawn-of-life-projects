@@ -43,15 +43,15 @@ export async function generateMetadata({
         "/item/" +
         item.id,
       locale: locale,
-      images: [
-        ...images,
-        {
-          url: "https://the-dawn-of-life-projects.vercel.app/ogp-1.jpg",
-          width: 1200,
-          height: 675,
-          alt: t("title"),
-        },
-      ],
+      // images: [
+      //   ...images,
+      //   {
+      //     url: "https://the-dawn-of-life-projects.vercel.app/ogp-1.jpg",
+      //     width: 1200,
+      //     height: 675,
+      //     alt: t("title"),
+      //   },
+      // ],
     },
   };
 }
