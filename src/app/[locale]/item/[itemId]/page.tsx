@@ -22,6 +22,13 @@ export async function generateMetadata({
 
   const t = await getTranslations({ locale, namespace: "metadata" });
 
+  const images = item.image.map((i) => ({
+    url: i.url,
+    width: 1920,
+    height: 1280,
+    alt: item.title,
+  }));
+
   return {
     title: item.title + " | " + item.author + " | " + t("title"),
     description: item.description,
@@ -37,6 +44,7 @@ export async function generateMetadata({
         item.id,
       locale: locale,
       images: [
+        ...images,
         {
           url: "https://the-dawn-of-life-projects.vercel.app/ogp-1.jpg",
           width: 1200,
