@@ -178,6 +178,7 @@ export default async function Page({ params }: { params: { itemId: string } }) {
           title={item?.title}
           description={item?.description}
           author={item?.author}
+          image={item?.image}
         />
       </article>
       <Footer isPage />

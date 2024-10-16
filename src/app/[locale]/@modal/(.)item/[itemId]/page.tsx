@@ -3,6 +3,7 @@ import { Icon, Share, XIcon } from "lucide-react";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { css, sva } from "styled-system/css";
 import { ItemContentShare } from "~/components/ItemContentShare";
@@ -60,10 +61,11 @@ export default function Page({ params }: { params: { itemId: string } }) {
 }
 
 const itemContentStyles = sva({
-  slots: ["wrapper", "title", "footer", "header"],
+  slots: ["wrapper", "title", "footer", "images", "header"],
   base: {
     wrapper: {
       position: "relative",
+      overflow: "scroll",
       backgroundColor: "#5982AD",
       color: "white",
       px: "64px",
@@ -84,13 +86,19 @@ const itemContentStyles = sva({
       fontSize: "32px",
       letterSpacing: "-0.1em",
     },
+    images: {
+      display: "grid",
+      gap: "16px",
+      mt: "72px",
+    },
     footer: {
-      position: "absolute",
-      bottom: "64px",
-      left: "64px",
+      mt: "72px",
+      // position: "absolute",
+      // bottom: "64px",
+      // left: "64px",
       mdDown: {
-        bottom: "48px",
-        left: "28px",
+        // bottom: "48px",
+        // left: "28px",
       },
     },
   },
@@ -98,6 +106,7 @@ const itemContentStyles = sva({
     isPage: {
       true: {
         wrapper: {
+          overflow: "initial",
           maxWidth: "640px",
           mx: "auto",
           height: "auto",
@@ -125,12 +134,41 @@ const itemContentStyles = sva({
   },
 });
 
+// {
+//   "id": "60906ae3-df0b-49c7-ace7-b44a7db3d373",
+//   "description": "本の背表紙が並ぶ光景は、未知なる世界への扉が開かれているようでワクワクする。本をきっかけに「聞く、そして語ること」がはじまる場をつくり、本人さえも気がつくことがなかった語りや創造力を記録していく。",
+//   "author": "今井 咲希",
+//   "image": [
+//   {
+//   "name": "20241015-Untitled Session 20182.jpg",
+//   "url": "https://www.notion.so/image/https:%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1180f784-7de0-4fa9-b2da-64a6fc32c16c%2Fd1b40ec0-50bd-423c-8f11-1a4d4bdc2161%2F20241015-Untitled_Session_20182.jpg?table=block&id=60906ae3-df0b-49c7-ace7-b44a7db3d373&cache=v2",
+//   "rawUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/1180f784-7de0-4fa9-b2da-64a6fc32c16c/d1b40ec0-50bd-423c-8f11-1a4d4bdc2161/20241015-Untitled_Session_20182.jpg"
+//   },
+//   {
+//   "name": "20241015-Untitled Session 20192.jpg",
+//   "url": "https://www.notion.so/image/https:%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1180f784-7de0-4fa9-b2da-64a6fc32c16c%2F78ce0842-6e1d-43e9-81d2-e612b14923ff%2F20241015-Untitled_Session_20192.jpg?table=block&id=60906ae3-df0b-49c7-ace7-b44a7db3d373&cache=v2",
+//   "rawUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/1180f784-7de0-4fa9-b2da-64a6fc32c16c/78ce0842-6e1d-43e9-81d2-e612b14923ff/20241015-Untitled_Session_20192.jpg"
+//   },
+//   {
+//   "name": "20241015-Untitled Session 20197.jpg",
+//   "url": "https://www.notion.so/image/https:%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1180f784-7de0-4fa9-b2da-64a6fc32c16c%2F0edb578a-d3a0-4da8-ae2f-b01fa8c3b343%2F20241015-Untitled_Session_20197.jpg?table=block&id=60906ae3-df0b-49c7-ace7-b44a7db3d373&cache=v2",
+//   "rawUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/1180f784-7de0-4fa9-b2da-64a6fc32c16c/0edb578a-d3a0-4da8-ae2f-b01fa8c3b343/20241015-Untitled_Session_20197.jpg"
+//   }
+//   ],
+//   "title": "個人の内なる声を引き出す、本がある環境の可能性"
+//   },
+
 export const ItemContent: React.FC<{
   isPage?: boolean;
   title?: string;
   author?: string;
   description?: string;
-}> = ({ isPage, title, author, description }) => {
+  image?: {
+    name: string;
+    url: string;
+    rawUrl: string;
+  }[];
+}> = ({ isPage, title, author, description, image }) => {
   const t = useTranslations("exibition-modal");
   const styles = itemContentStyles({
     isPage,
@@ -171,6 +209,22 @@ export const ItemContent: React.FC<{
       >
         <PaltSettingsContainer>{description}</PaltSettingsContainer>
       </p>
+
+      <div className={styles.images}>
+        {image?.map((img) => (
+          <div key={img.name}>
+            <Image
+              src={img.url}
+              alt={img.name}
+              width={1920}
+              height={1280}
+              className={css({
+                backgroundColor: "lightgray",
+              })}
+            />
+          </div>
+        ))}
+      </div>
 
       <footer className={styles.footer}>
         <ItemContentShare />

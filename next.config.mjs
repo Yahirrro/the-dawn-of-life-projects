@@ -11,6 +11,15 @@ if (process.env.NODE_ENV === "development") {
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.notion.so",
+      },
+    ],
+  },
+};
 
 export default withNextIntl(nextConfig);

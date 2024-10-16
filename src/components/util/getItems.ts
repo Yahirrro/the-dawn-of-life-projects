@@ -4,6 +4,11 @@ export const getItems: () => Promise<
     title: string;
     description: string;
     author: string;
+    image: {
+      name: string;
+      url: string;
+      rawUrl: string;
+    }[];
   }[]
 > = async () => {
   const url =
@@ -14,9 +19,14 @@ export const getItems: () => Promise<
     title: string;
     description: string;
     author: string;
+    image: {
+      name: string;
+      url: string;
+      rawUrl: string;
+    }[];
   }[] = await fetch(url, {
     next: {
-      revalidate: 0,
+      revalidate: 1,
       tags: ["items"],
     },
   }).then((res) => res.json());
@@ -27,5 +37,6 @@ export const getItems: () => Promise<
     title: d.title,
     description: d.description,
     author: d.author,
+    image: d.image,
   }));
 };

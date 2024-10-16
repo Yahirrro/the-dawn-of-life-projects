@@ -15,6 +15,7 @@ export const ItemCotentWrapper: React.FC<{
       title={item.title}
       author={item.author}
       description={item.description}
+      image={item.image}
     />
   );
 };
