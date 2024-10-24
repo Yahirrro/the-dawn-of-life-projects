@@ -3,7 +3,7 @@
 import { MetadataRoute } from "next";
 import { getItems } from "~/components/util/getItems";
 
-const host = "https://the-dawn-of-life-projects.vercel.app";
+const host = "https://dawnlifepj.musabi.ac.jp";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
