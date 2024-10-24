@@ -34,15 +34,11 @@ export async function generateMetadata({
       title: item.title + " | " + item.author,
       description: item.description,
       type: "article",
-      url:
-        "https://the-dawn-of-life-projects.vercel.app/" +
-        locale +
-        "/item/" +
-        item.id,
+      url: "https://dawnlifepj.musabi.ac.jp/" + locale + "/item/" + item.id,
       locale: locale,
       images: [
         {
-          url: "https://the-dawn-of-life-projects.vercel.app/ogp-1.jpg",
+          url: "https://dawnlifepj.musabi.ac.jp/ogp-1.jpg",
           width: 1200,
           height: 675,
           alt: t("title"),

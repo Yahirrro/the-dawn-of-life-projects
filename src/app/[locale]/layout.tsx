@@ -21,11 +21,11 @@ export async function generateMetadata({
     openGraph: {
       siteName: t("title"),
       type: "website",
-      url: "https://the-dawn-of-life-projects.vercel.app/" + locale,
+      url: "https://dawnlifepj.musabi.ac.jp/" + locale,
       locale: locale,
       images: [
         {
-          url: "https://the-dawn-of-life-projects.vercel.app/ogp-1.jpg",
+          url: "https://dawnlifepj.musabi.ac.jp/ogp-1.jpg",
           width: 1200,
           height: 675,
           alt: t("title"),

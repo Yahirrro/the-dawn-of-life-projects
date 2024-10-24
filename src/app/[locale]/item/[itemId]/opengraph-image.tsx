@@ -56,7 +56,7 @@ export default async function Image({
           />
         )}
         <img
-          src="https://the-dawn-of-life-projects.vercel.app/images/ogp-template.png"
+          src="https://dawnlifepj.musabi.ac.jp/images/ogp-template.png"
           alt="THE DAWN OF LIFE PROJECTS"
           style={{
             position: "absolute",
